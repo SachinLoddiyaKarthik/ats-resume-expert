@@ -9,6 +9,14 @@ An **AI-powered resume analyzer** that blends Google Gemini, NLP, and beautiful 
 
 ---
 
+## 🔗 Live Demo
+
+Try it out now 👉 [ats-resume-expert.streamlit.app](https://ats-resume-expert-vaz74q2toftmzv2fykb7wh.streamlit.app/)
+
+No install needed. Just upload your resume and JD to see the magic.
+
+---
+
 ## 🎯 What’s This?
 
 A smart resume matching tool that:
@@ -143,5 +151,3 @@ streamlit run ats_resume_expert.py
 
 Give the repo a ⭐ if you found it helpful.
 Let’s help more people build **resumes that pass the bots**!
-
-
