@@ -1,6 +1,6 @@
-# 🧠 Enhanced ATS Resume Expert – Gemini AI + Streamlit + NLP
+# 🧠 Enhanced ATS Resume Expert Pro – Gemini AI + Streamlit + NLP
 
-An **AI-powered resume analyzer** that blends Google Gemini, NLP, and beautiful Streamlit charts — designed to help you **beat the bots** (ATS) and land your dream job faster! 🎯
+An **AI-powered resume analyzer** built with Google Gemini Pro, NLP, and interactive Streamlit visualizations. Designed to help job seekers optimize their resumes for ATS (Applicant Tracking Systems) and stand out to recruiters. 🌟
 
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![Google Gemini](https://img.shields.io/badge/Google%20Gemini-AI-blueviolet?style=for-the-badge&logo=google)
@@ -13,141 +13,135 @@ An **AI-powered resume analyzer** that blends Google Gemini, NLP, and beautiful 
 
 Try it out now 👉 [ats-resume-expert.streamlit.app](https://ats-resume-expert-vaz74q2toftmzv2fykb7wh.streamlit.app/)
 
-No install needed. Just upload your resume and JD to see the magic.
+No install needed. Upload your resume and JD to get real-time AI insights.
 
 ---
 
 ## 🎯 What’s This?
 
-A smart resume matching tool that:
-- 📄 Analyzes your resume vs. a job description
-- 🧠 Uses Google Gemini for deep insight
-- 🔍 Detects **semantic similarity** and **keyword overlap**
-- 🎯 Highlights **skills gaps** and improvement tips
-- 📊 Visualizes results with beautiful charts
-- 🚀 Exports full reports in JSON or TXT
+A smart resume optimization platform that:
+- 📄 Analyzes your resume against a job description
+- 🧠 Uses Google Gemini Pro for deep LLM insights
+- 🔍 Detects **semantic match**, **keyword overlap**, and **skills gap**
+- 🎯 Offers AI-driven career coaching & improvement tips
+- 📊 Visualizes metrics with **Plotly**, **WordCloud**, and **Radar Charts**
+- 🚀 Tracks progress and exports full PDF reports
 
 ---
 
 ## 🚀 Features
 
-- 🤖 Gemini AI-driven content scoring and suggestions
-- 📎 PDF Resume parsing with page-wise context
-- 📈 Cosine similarity + TF-IDF for deep text comparison
-- 📊 Interactive charts (Plotly) for keyword & skills analysis
-- 💾 One-click export of reports and insights
-- 🧪 Optimized for ATS compatibility and human recruiters
+- 🤖 LLM-powered insights via Gemini (comprehensive, coaching, improvement modes)
+- 📄 PDF + DOCX resume parsing with full-text editor tab
+- 🌐 Semantic similarity scoring using TF-IDF + cosine similarity
+- 📊 Interactive visuals: Word clouds, radar charts, heatmaps, timelines
+- 📅 SQLite database for historical analysis tracking
+- 🔄 Export analysis in TXT, JSON, and downloadable PDF report
 
 ---
 
-## 🏗️ Architecture
+## 🏐 Architecture
 
 ```
-
-Resume PDF + Job Description
-↓
-Text Parsing
-↓
-+---------------------+
-|  Gemini AI Analysis |
-+---------------------+
-↓
-Semantic Matching + Skills Gap
-↓
-Visualization + Download
-
-````
+Resume PDF / DOCX + Job Description
+👇
+Text Extraction (PyMuPDF / python-docx)
+👇
+Gemini Pro Analysis + NLP Matching
+👇
+Semantic + Skills Gap Evaluation
+👇
+Visualizations + Career Suggestions
+👇
+Reports + Historical Tracking (SQLite)
+```
 
 ---
 
-## 🛠 Setup
+## 🛠️ Setup
 
 ### 1. Clone this repo
-
 ```bash
 git clone https://github.com/SachinLoddiyaKarthik/ats-resume-expert
 cd ats-resume-expert
-````
+```
 
 ### 2. Create virtual environment
-
 ```bash
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 ```
 
 ### 3. Install dependencies
-
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 4. Add your `.env` file
-
 ```env
 GOOGLE_API_KEY=your_gemini_api_key_here
 ```
 
 ### 5. Launch the app
-
 ```bash
 streamlit run ats_resume_expert.py
 ```
 
 ---
 
-## 📸 Screenshot
+## 📸 Screenshots
 
-> A sleek Streamlit dashboard where you paste a job description, upload your resume, and get an AI-driven report with charts, scores, and suggestions.
-> Because your resume deserves more than just a keyword scan. 💼✨
-
----
-
-## 🧰 Tech Stack
-
-| Tech                 | Role                         |
-| -------------------- | ---------------------------- |
-| Streamlit            | Web App Interface            |
-| Google Generative AI | Resume Analysis (LLM)        |
-| PyMuPDF              | Resume Text Extraction       |
-| scikit-learn         | TF-IDF + Cosine Similarity   |
-| Plotly               | Charts + Data Visualizations |
-| python-dotenv        | API Key Security             |
-| pandas               | Data Handling & Export       |
+> Modern dashboard with semantic match scoring, keyword analysis, AI suggestions, and resume editor.
 
 ---
 
-## ✨ Sample Output
+## 🛠️ Tech Stack
+
+| Tech                 | Purpose                          |
+|----------------------|----------------------------------|
+| Streamlit            | Web interface                    |
+| Google Gemini Pro    | AI prompt-based resume analysis |
+| PyMuPDF / python-docx| Resume text extraction           |
+| scikit-learn         | TF-IDF + cosine similarity       |
+| Plotly + WordCloud   | Interactive visualizations       |
+| pandas               | Data wrangling                   |
+| reportlab            | PDF export generation            |
+| SQLite3              | Historical analytics             |
+
+---
+
+## 📈 Sample Output
 
 ```
-✅ Match Score: 78.5%
-🎯 Matched Keywords: data engineer, azure, etl
-⚠️ Missing Skills: airflow, sql optimization
-🚀 Recommendations:
- - Add quantifiable achievements
- - Mention relevant cloud tools
- - Improve formatting for ATS
+😂 Overall Score: 84.2%
+🌟 Matched Skills: data engineering, python, spark
+🚨 Missing: airflow, pipeline orchestration
+🚀 Suggestions:
+ - Add quantifiable project outcomes
+ - Mention CI/CD or orchestration tools
+ - Align resume header formatting for ATS
 ```
 
 ---
 
 ## 💡 Use Cases
 
-* Apply to roles with **optimized resumes**
-* Know **what keywords to add/remove**
-* Prioritize **high-impact improvements**
-* Export reports for job coaching or feedback
+- Tailor your resume for every job
+- Optimize for ATS and recruiter readability
+- Track resume performance improvements over time
+- Export and share insights with career coaches
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💼 Author
 
-**Sachin Loddiya Karthik**
-🔗 [GitHub](https://github.com/SachinLoddiyaKarthik) • [LinkedIn](https://www.linkedin.com/in/sachin-lk/)
+**Sachin Loddiya Karthik**  
+[GitHub](https://github.com/SachinLoddiyaKarthik) • [LinkedIn](https://www.linkedin.com/in/sachin-lk/)
 
 ---
 
 ## ⭐ Like It?
 
-Give the repo a ⭐ if you found it helpful.
-Let’s help more people build **resumes that pass the bots**!
+Star the repo ⭐ and share with job seekers who want to stand out and get past the bots! 
+
+**#AI #Gemini #ATS #ResumeOptimizer #Streamlit**
