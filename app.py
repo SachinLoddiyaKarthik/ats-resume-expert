@@ -42,6 +42,10 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+theme_type = st.context.theme.type  # returns "light" or "dark"
+text_color = "#212529" if theme_type == "light" else "white"
+text_color = "white" if theme_type == "dark" else "black"
+
 # Ensure load_dotenv is called after imports
 load_dotenv()
 
@@ -668,7 +672,7 @@ class AdvancedATSAnalyzer:
             colorscale='Viridis', # Good for continuous data, green for high, purple for low
             text=z_data,
             texttemplate="%{text}%",
-            textfont={"size": 12, "color": "white"},
+            textfont={"size": 12, "color": text_color},
             hoverongaps=False
         ))
         
@@ -863,7 +867,7 @@ st.markdown("""
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             background-attachment: fixed;
             font-family: 'Inter', sans-serif;
-            color: white; /* Default text color */
+            color: text_color;; /* Default text color */
         }
         
         .stApp > header {
@@ -883,7 +887,7 @@ st.markdown("""
         .metric-card-advanced {
             background: linear-gradient(45deg, rgba(255, 107, 107, 0.8), rgba(78, 205, 196, 0.8));
             backdrop-filter: blur(10px);
-            color: white;
+            color: text_color;;
             width: 180px;
             height: 130px;
             border-radius: 15px;
@@ -933,7 +937,7 @@ st.markdown("""
         
         .stButton>button {
             background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
+            color: text_color;;
             font-weight: 600;
             border: none;
             border-radius: 25px;
@@ -959,7 +963,7 @@ st.markdown("""
         /* Adjust Streamlit specific elements for dark background */
         textarea, input[type="text"] {
             background-color: rgba(255, 255, 255, 0.1);
-            color: white;
+            color: text_color;;
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 5px;
         }
@@ -968,16 +972,16 @@ st.markdown("""
             box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
         }
         .stFileUploader label, .stSelectbox label, .stCheckbox label, .stSlider label {
-            color: white;
+            color: text_color;;
         }
         .stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {
             font-size: 1.1rem;
             font-weight: bold;
-            color: white; /* Ensure tab titles are visible */
+            color: text_color;; /* Ensure tab titles are visible */
         }
         .stSuccess, .stWarning, .stInfo, .stError {
             background-color: rgba(255, 255, 255, 0.1);
-            color: white;
+            color: text_color;;
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
@@ -987,10 +991,10 @@ st.markdown("""
         .stError { border-left: 5px solid #dc3545; }
         /* Dataframe styling for dark theme */
         .stDataFrame {
-            color: white;
+            color: text_color;;
         }
         .stDataFrame thead th {
-            color: white;
+            color: text_color;;
             background-color: rgba(255, 255, 255, 0.1);
         }
         .stDataFrame tbody tr {
@@ -1000,19 +1004,47 @@ st.markdown("""
             background-color: rgba(255, 255, 255, 0.02);
         }
         .stDataFrame tbody td {
-            color: white;
+            color: text_color;;
         }
+        
+        /* General styling for header text (defaults to dark theme) */
+        .dashboard-header h1 {
+            color: text_color;;
+        }
+        .dashboard-header p {
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Fix header visibility in light theme */
+        html[theme="light"] .dashboard-header h1 {
+            color: #212529 !important;
+        }
+        html[theme="light"] .dashboard-header p {
+            color: #495057 !important;
+        }
+        
+        /* Footer styling */
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: text_color;; /* Default color for dark theme */
+        }
+
+        html[theme="light"] .footer {
+            color: #343a40; /* Color for light theme */
+        }
+
     </style>
 """, unsafe_allow_html=True)
 
 
 # --- Dashboard Header ---
-st.markdown("""
+st.markdown(f"""
     <div class="dashboard-header">
-        <h1 style='color: white; font-size: 3.5rem; margin-bottom: 0; font-weight: 700;'>
+        <h1 style='font-size: 3.5rem; margin-bottom: 0; font-weight: 700; color: {text_color};'>
             🚀 ATS Resume Expert Pro
         </h1>
-        <p style='color: rgba(255,255,255,0.9); font-size: 1.3rem; margin-top: 0.5rem;'>
+        <p style='font-size: 1.3rem; margin-top: 0.5rem; color: {text_color};'>
             Advanced AI-Powered Resume Analytics & Optimization Platform
         </p>
     </div>
@@ -1696,7 +1728,7 @@ with tab3: # Resume Editor Tab
 
 # --- Footer ---
 st.markdown("""
-    <div style='text-align: center; padding: 2rem 0; color: white;'>
+    <div class="footer">
         <p>Built with ❤️ using Streamlit and Google Gemini AI</p>
         <p><small>🔒 Your data is processed securely and not stored permanently (unless explicitly saved for history).</small></p>
     </div>
